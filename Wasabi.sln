@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wasabi", "Wasabi\Wasabi.csproj", "{C647FFD4-668C-4CE7-9D82-C435FED7608D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C647FFD4-668C-4CE7-9D82-C435FED7608D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C647FFD4-668C-4CE7-9D82-C435FED7608D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C647FFD4-668C-4CE7-9D82-C435FED7608D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C647FFD4-668C-4CE7-9D82-C435FED7608D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {805B8E0B-8439-4588-ACB8-372E6F8A6FED}
+	EndGlobalSection
+EndGlobal
