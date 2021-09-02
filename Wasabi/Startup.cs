@@ -30,7 +30,7 @@ namespace Wasabi
 
             services.AddSwaggerGen(x =>
             {
-                x.SwaggerDoc("v1", new OpenApiInfo { Version = "CHMSAJID7@GMAIL.COM", Title = "CHMSAJID7", Description = "chmsajid7@gmail.com" });
+                x.SwaggerDoc("v1", new OpenApiInfo { Version = "CHMSAJID7@GMAIL.COM", Title = "WASABI CRUD APP", Description = "chmsajid7@gmail.com" });
             });
         }
 
