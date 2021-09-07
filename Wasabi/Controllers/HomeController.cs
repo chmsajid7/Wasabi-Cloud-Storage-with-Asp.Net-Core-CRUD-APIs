@@ -100,7 +100,7 @@ namespace Wasabi.Controllers
             return "File Upoaded To Wasabi Cloud!";
         }
 
-        [HttpPost("Upload_File_In_Bucket_using_file_path")]
+        [HttpPost("Upload_File_In_Bucket_from_given_file_path")]
         public async Task<string> UploadFileUsingPathAsync()
         {
             // Set Up connection
@@ -133,13 +133,13 @@ namespace Wasabi.Controllers
             return "File Upoaded To Wasabi Cloud!";
         }
 
-        [HttpGet("Get_File_From_Bucket")]
+        [HttpGet("Download_File_From_Bucket_To_Specified_Location")]
         public async Task<string> GetFileAsync()
         {
             // Set Up connection
             bool config = await Config();
             if (!config)
-                return "File Not Upoaded!";
+                return "Failed To Connect!";
 
             try
             {
@@ -162,6 +162,38 @@ namespace Wasabi.Controllers
                 _s3Client.Dispose();
             }
             return "File Downloaded!";
+        }
+
+        [HttpGet("Download_Url_of_File_From_Bucket")]
+        public async Task<string> GetFileAsync_Url()
+        {
+            // Set Up connection
+            bool config = await Config();
+            if (!config)
+                return "Failed To Connect!";
+
+            string url = "";
+            try
+            {
+                var request = new GetPreSignedUrlRequest()
+                {
+                    BucketName = _bucketName,
+                    Key = _objectName1,
+                    Expires = DateTime.UtcNow.AddMinutes(10), // url will expire in 10 minutes.
+                    Verb = HttpVerb.GET,
+                    Protocol = Protocol.HTTPS
+                };
+                url = _s3Client.GetPreSignedURL(request);
+            }
+            catch (AmazonS3Exception e)
+            {
+                return "Error :" + e.Message;
+            }
+            finally
+            {
+                _s3Client.Dispose();
+            }
+            return url;
         }
 
         [HttpDelete("Delete_File_In_Bucket")]
